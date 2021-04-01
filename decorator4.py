@@ -6,7 +6,7 @@ def check_password(func):
         password = input()
         if password == access_password:
             return func(*args, **kwargs)
-        print('В доступе отказано')
+        return 'В доступе отказано'
 
     return wrapper
 
@@ -19,7 +19,7 @@ def fib(n):
 
 @check_password
 def fib1(n):
-    print(fib(n))
+    return fib(n)
 
 
-#fib1(10)
+#print(fib1(10))
